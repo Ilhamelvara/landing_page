@@ -1,0 +1,227 @@
+.contact-page-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.contact-title-container {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.contact-title {
+  font-family: 'Inter', sans-serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.5rem;
+  transition: color 0.4s;
+}
+
+.contact-underline {
+  width: 70px;
+  height: 3px;
+  background: linear-gradient(90deg, #e85d04, #f4a261);
+  border-radius: 10px;
+  margin: 0 auto;
+}
+
+.contact-card {
+  width: 100%;
+  max-width: 600px;
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 20px;
+  padding: 3rem;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+  transition: background 0.4s, border-color 0.4s, box-shadow 0.4s, transform 0.3s;
+  backdrop-filter: blur(10px);
+}
+
+.contact-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.08);
+}
+
+.contact-card.dark {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+}
+
+.contact-card.dark:hover {
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.3);
+}
+
+.contact-description {
+  text-align: center;
+  font-size: 1.1rem;
+  color: rgba(0, 0, 0, 0.7);
+  margin-bottom: 2.5rem;
+  line-height: 1.6;
+}
+
+.contact-card.dark .contact-description {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.contact-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.contact-form-group label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #1a1a2e;
+}
+
+.contact-card.dark .contact-form-group label {
+  color: #f5f5f0;
+}
+
+.contact-form-group input,
+.contact-form-group textarea {
+  width: 100%;
+  padding: 1rem;
+  border-radius: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background: rgba(0, 0, 0, 0.02);
+  font-family: inherit;
+  font-size: 1rem;
+  color: #1a1a2e;
+  transition: all 0.3s;
+}
+
+.contact-card.dark .contact-form-group input,
+.contact-card.dark .contact-form-group textarea {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.15);
+  color: #f5f5f0;
+}
+
+.contact-form-group input:disabled,
+.contact-form-group textarea:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.contact-notification {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem;
+  border-radius: 12px;
+  margin-bottom: 2rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+  animation: slideDown 0.4s ease-out;
+}
+
+.contact-notification.success {
+  background: rgba(16, 185, 129, 0.1);
+  color: #10b981;
+  border: 1px solid rgba(16, 185, 129, 0.2);
+}
+
+.contact-notification.error {
+  background: rgba(239, 68, 68, 0.1);
+  color: #ef4444;
+  border: 1px solid rgba(239, 68, 68, 0.2);
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.contact-submit-btn {
+  background: #e85d04;
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+  margin-top: 0.5rem;
+  width: 100%;
+}
+
+.contact-submit-btn:hover:not(:disabled) {
+  background: #d05303;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(232, 93, 4, 0.3);
+}
+
+.contact-submit-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  filter: grayscale(0.5);
+}
+
+.contact-submit-btn.loading {
+  position: relative;
+  color: transparent;
+}
+
+.contact-submit-btn.loading::after {
+  content: "Sending...";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 1rem;
+}
+
+.contact-email-direct {
+  text-align: center;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  padding-top: 2rem;
+}
+
+.contact-card.dark .contact-email-direct {
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.contact-email-direct p {
+  font-size: 0.95rem;
+  color: rgba(0, 0, 0, 0.6);
+  margin-bottom: 1rem;
+}
+
+.contact-card.dark .contact-email-direct p {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.direct-email-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #e85d04;
+  font-weight: 600;
+  font-size: 1.1rem;
+  text-decoration: none;
+  transition: opacity 0.3s;
+}
+
+.direct-email-link:hover {
+  opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+  .contact-card {
+    padding: 2rem;
+  }
+}
