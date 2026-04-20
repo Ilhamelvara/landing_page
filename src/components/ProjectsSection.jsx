@@ -39,7 +39,7 @@ export default function ProjectsSection({ darkMode }) {
       ],
       link: "https://capstone-resqnet.vercel.app/",
       role: "Professional | March 2026 - Present",
-      image: "public/resqnet.png"
+      image: "resqnet.png"
     },
     {
       name: "Elvara Shop",
@@ -59,7 +59,7 @@ export default function ProjectsSection({ darkMode }) {
       ],
       link: "https://ilhamelvara.github.io/onlinebooststrap/",
       role: "Personal Project | Mar 2026 - Present",
-      image: "public/elvara.png"
+      image: "elvara.png"
     },
     {
       name: "Bikenjoy",
@@ -79,7 +79,7 @@ export default function ProjectsSection({ darkMode }) {
       ],
       link: "https://gojirated.github.io/bikenjoy/",
       role: "Team Project | 2026",
-      image: "public/bikenjoy.png"
+      image: "bikenjoy.png"
     }
   ];
 

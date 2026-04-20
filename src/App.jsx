@@ -45,7 +45,7 @@ export default function App() {
       <section className="hero-section">
         {/* Background image */}
         <img
-          src="/hero.png"
+          src="hero.png"
           alt="Developer workspace"
           className="hero-img"
         />

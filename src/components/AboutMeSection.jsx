@@ -13,7 +13,7 @@ export default function AboutMeSection({ darkMode }) {
       <div className={`about-card ${darkMode ? 'dark' : ''}`}>
         <div className="about-layout">
           <div className="about-image-container">
-            <img src="/profil.jpeg" alt="Profile" className="about-image" />
+            <img src="profil.jpeg" alt="Profile" className="about-image" />
           </div>
           <div className="about-content">
           <p className="about-greeting">
