@@ -84,7 +84,7 @@ export default function App() {
                 <p className="hero-role">Web Developer</p>
                 
                 <p className="hero-description">
-                  Saya adalah pengembang antarmuka web (*Front-End*) yang berfokus pada pembuatan website interaktif yang modern, responsif, dan berestetika tinggi. Senang mengubah baris kode menjadi visual yang menakjubkan bagi pengguna.
+                  Saya adalah seorang web Developer yang berfokus pada pembuatan website interaktif yang modern, responsif, dan berestetika tinggi. Senang mengubah baris kode menjadi visual yang menakjubkan bagi pengguna.
                 </p>
 
                 {/* Quick Social Links */}
