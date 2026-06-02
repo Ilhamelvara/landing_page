@@ -1,11 +1,12 @@
 import { useState, useEffect } from 'react'
 import SkillsSection from './components/SkillsSection'
 import ProjectsSection from './components/ProjectsSection'
+import CertificatesSection from './components/CertificatesSection'
 import AboutMeSection from './components/AboutMeSection'
 import ContactSection from './components/ContactSection'
 import Footer from './components/Footer'
 
-const NAV_LINKS = ['Home', 'Skills', 'Projects', 'About Me', 'Contact']
+const NAV_LINKS = ['Home', 'Skills', 'Projects', 'Certificates', 'About Me', 'Contact']
 
 export default function App() {
   const [currentPage, setCurrentPage] = useState('home')
@@ -271,6 +272,12 @@ export default function App() {
         {currentPage === 'projects' && (
           <section id="projects" className="page-section page-fade-in standalone-page">
             <ProjectsSection darkMode={darkMode} />
+          </section>
+        )}
+
+        {currentPage === 'certificates' && (
+          <section id="certificates" className="page-section page-fade-in standalone-page">
+            <CertificatesSection darkMode={darkMode} />
           </section>
         )}
 
