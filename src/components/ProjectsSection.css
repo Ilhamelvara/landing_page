@@ -238,5 +238,10 @@ body.dark .project-meta {
 @media (max-width: 900px) {
   .project-card-desktop {
     grid-template-columns: 1fr;
+    padding: 1.5rem;
+    gap: 1.5rem;
+  }
+  .projects-list {
+    gap: 2rem;
   }
 }

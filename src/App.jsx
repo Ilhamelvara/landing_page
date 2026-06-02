@@ -10,6 +10,7 @@ const NAV_LINKS = ['Home', 'Skills', 'Projects', 'About Me', 'Contact']
 export default function App() {
   const [currentPage, setCurrentPage] = useState('home')
   const [darkMode, setDarkMode] = useState(false)
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   useEffect(() => {
     if (darkMode) document.body.classList.add('dark')
@@ -27,7 +28,10 @@ export default function App() {
       <nav className="navbar">
         <div
           className="navbar-logo"
-          onClick={() => setCurrentPage('home')}
+          onClick={() => {
+            setCurrentPage('home');
+            setMobileMenuOpen(false);
+          }}
           title="Go to Home"
         >
           Ilham Putra
@@ -52,15 +56,49 @@ export default function App() {
             );
           })}
         </ul>
-        <button
-          className="theme-toggle"
-          onClick={() => setDarkMode(d => !d)}
-          aria-label="Toggle dark mode"
-          title={darkMode ? 'Switch to light mode' : 'Switch to dark mode'}
-        >
-          {darkMode ? '☀️' : '🌙'}
-        </button>
+        <div className="navbar-actions">
+          <button
+            className="theme-toggle"
+            onClick={() => setDarkMode(d => !d)}
+            aria-label="Toggle dark mode"
+            title={darkMode ? 'Switch to light mode' : 'Switch to dark mode'}
+          >
+            {darkMode ? '☀️' : '🌙'}
+          </button>
+          <button 
+            className={`navbar-hamburger ${mobileMenuOpen ? 'open' : ''}`}
+            onClick={() => setMobileMenuOpen(open => !open)}
+            aria-label="Toggle navigation menu"
+          >
+            <span className="hamburger-line"></span>
+            <span className="hamburger-line"></span>
+            <span className="hamburger-line"></span>
+          </button>
+        </div>
       </nav>
+
+      {/* Mobile Menu Dropdown */}
+      <ul className={`navbar-mobile-menu ${mobileMenuOpen ? 'active' : ''}`}>
+        {NAV_LINKS.map(link => {
+          const sectionId = link.toLowerCase().replace(' ', '-');
+          const isActive = currentPage === sectionId;
+          return (
+            <li key={link}>
+              <a
+                href={`#${sectionId}`}
+                className={isActive ? 'active' : ''}
+                onClick={(e) => {
+                  e.preventDefault();
+                  setCurrentPage(sectionId);
+                  setMobileMenuOpen(false);
+                }}
+              >
+                {link}
+              </a>
+            </li>
+          );
+        })}
+      </ul>
 
       {/* ── MAIN CONTENT (SINGLE STANDALONE VIEW) ── */}
       <main className="main-content-wrapper">
