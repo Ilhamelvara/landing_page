@@ -1,57 +1,13 @@
 import { useState } from 'react'
 import './ProjectsSection.css'
 
-const POPULAR_TECH = [
-  { name: 'HTML5', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg' },
-  { name: 'CSS3', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg' },
-  { name: 'JavaScript', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg' },
-  { name: 'TypeScript', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg' },
-  { name: 'React', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg' },
-  { name: 'Next.js', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg', invertDark: true },
-  { name: 'Node.js', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg' },
-  { name: 'TailwindCSS', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg' },
-  { name: 'Bootstrap', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg' },
-  { name: 'PostgreSQL', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg' },
-  { name: 'Prisma', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/prisma/prisma-original.svg', invertDark: true },
-  { name: 'Git', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg' },
-  { name: 'Github', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg' },
-  { name: 'Python', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg' },
-  { name: 'MongoDB', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg' },
-  { name: 'Docker', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg' }
-];
-
 export default function ProjectsSection({ darkMode }) {
   const [activeTabs, setActiveTabs] = useState({
     "ResQNet": "learned",
     "Elvara Shop": "learned",
-    "BencanaMap": "learned",
-    "ChatRoom Admin": "learned"
-  });
-
-  // State for the two customizable slots loaded from localStorage
-  const [slot1, setSlot1] = useState(() => {
-    const saved = localStorage.getItem('portfolio_project_slot1');
-    return saved ? JSON.parse(saved) : null;
-  });
-  
-  const [slot2, setSlot2] = useState(() => {
-    const saved = localStorage.getItem('portfolio_project_slot2');
-    return saved ? JSON.parse(saved) : null;
-  });
-
-  // Modal and Form States
-  const [modalOpen, setModalOpen] = useState(false);
-  const [editingSlot, setEditingSlot] = useState(null); // 'slot1' or 'slot2'
-  const [formValues, setFormValues] = useState({
-    name: '',
-    description: '',
-    tech: [],
-    customTech: '',
-    learned: ['', '', ''],
-    challenges: ['', ''],
-    link: '',
-    role: '',
-    image: 'gradient-sunset'
+    "Bikenjoy": "learned",
+    "ChildChoding": "learned",
+    "Website SPMB": "learned"
   });
 
   const setTab = (projectName, tab) => {
@@ -108,7 +64,7 @@ export default function ProjectsSection({ darkMode }) {
     },
     {
       name: "Bikenjoy",
-      description: "A disaster visualization tool that displays real-time disaster reports on an interactive map. Focuses on minimal design and efficient data representation.",
+      description: "A cycling community platform that connects bike enthusiasts to discover routes, share riding experiences, and join group events. Built with a clean, intuitive interface focused on ease of use and community engagement.",
       tech: [
         { name: 'HTML', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg' },
         { name: 'CSS3', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg' },
@@ -116,120 +72,69 @@ export default function ProjectsSection({ darkMode }) {
         { name: 'JavaScript', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg' },
       ],
       learned: [
-        "Implementing real-time data fetching for map markers.",
-        "Customizing map icon aesthetics for better UX."
+        "Building responsive layouts using Bootstrap grid system for various screen sizes.",
+        "Implementing interactive JavaScript features for dynamic content display."
       ],
       challenges: [
-        "Performance optimization for rendering many markers."
+        "Designing a user-friendly navigation flow that accommodates diverse content categories."
       ],
       link: "https://gojirated.github.io/bikenjoy/",
       role: "Team Project | 2026",
       image: "bikenjoy.png"
+    },
+    {
+      name: "ChildChoding",
+      description: "An interactive web-based coding education platform designed for children. Features fun, gamified lessons and visual programming exercises to introduce kids to the world of programming in an engaging and accessible way.",
+      tech: [
+        { name: 'HTML', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg' },
+        { name: 'CSS3', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg' },
+        { name: 'Bootstrap', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg' },
+        { name: 'JavaScript', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg' },
+      ],
+      learned: [
+        "Designing child-friendly UI with colorful, intuitive layouts that keep young users engaged.",
+        "Structuring educational content progressively from basic to advanced concepts."
+      ],
+      challenges: [
+        "Creating interactive exercises that are both educational and entertaining for a young audience."
+      ],
+      link: "https://gojirated.github.io/bikenjoy/",
+      role: "Team Project | 2026",
+      image: "childchoding.png"
+    },
+    {
+      name: "Website SPMB",
+      description: "A full-stack student enrollment system (Seleksi Penerimaan Murid Baru) for SMKN 2 Mojokerto. Features an online registration flow, document upload, real-time admission status tracking, and an admin dashboard for managing applicant data efficiently.",
+      tech: [
+        { name: 'React', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg' },
+        { name: 'TailwindCSS', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg' },
+        { name: 'TypeScript', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg' },
+        { name: 'Framer Motion', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/framermotion/framermotion-original.svg' },
+        { name: 'Supabase', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/supabase/supabase-original.svg' },
+        { name: 'Node.js', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg' },
+        { name: 'Prisma', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/prisma/prisma-original.svg', invertDark: true },
+      ],
+      learned: [
+        "Integrating Supabase for authentication, real-time database, and file storage in a production environment.",
+        "Building smooth page transitions and micro-interactions using Framer Motion.",
+        "Managing complex multi-step registration forms with proper validation and state handling."
+      ],
+      challenges: [
+        "Handling concurrent applicant submissions and ensuring data integrity during peak registration periods.",
+        "Designing an admin dashboard that is both comprehensive and easy to navigate for school staff."
+      ],
+      link: "https://spmb.smkn2mojokerto.sch.id/",
+      role: "Team Project | 2026",
+      image: "SPMB.png"
     }
   ];
 
-  // Open modal and pre-fill form
-  const openForm = (slotName, currentData) => {
-    setEditingSlot(slotName);
-    if (currentData) {
-      setFormValues({
-        name: currentData.name || '',
-        description: currentData.description || '',
-        tech: (currentData.tech || []).map(t => t.name).filter(n => POPULAR_TECH.some(pt => pt.name === n)),
-        customTech: (currentData.tech || []).map(t => t.name).filter(n => !POPULAR_TECH.some(pt => pt.name === n)).join(', '),
-        learned: (currentData.learned || []).concat(['', '', '']).slice(0, 3),
-        challenges: (currentData.challenges || []).concat(['', '']).slice(0, 2),
-        link: currentData.link || '',
-        role: currentData.role || '',
-        image: currentData.image || 'gradient-sunset'
-      });
-    } else {
-      setFormValues({
-        name: '',
-        description: '',
-        tech: ['HTML5', 'CSS3', 'JavaScript'],
-        customTech: '',
-        learned: ['', '', ''],
-        challenges: ['', ''],
-        link: '',
-        role: '',
-        image: 'gradient-sunset'
-      });
-    }
-    setModalOpen(true);
-  };
-
-  // Handle form save
-  const handleSave = (e) => {
-    e.preventDefault();
-
-    const selectedTechObjects = POPULAR_TECH.filter(t => formValues.tech.includes(t.name));
-
-    if (formValues.customTech) {
-      formValues.customTech.split(',').forEach(item => {
-        const trimmed = item.trim();
-        if (trimmed) {
-          selectedTechObjects.push({
-            name: trimmed,
-            icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg' // default fallback icon
-          });
-        }
-      });
-    }
-
-    const newProject = {
-      name: formValues.name.trim() || `New Project Slot`,
-      description: formValues.description.trim() || 'A new awesome project in my portfolio.',
-      tech: selectedTechObjects,
-      learned: formValues.learned.map(l => l.trim()).filter(l => l !== ''),
-      challenges: formValues.challenges.map(c => c.trim()).filter(c => c !== ''),
-      link: formValues.link.trim() || '#',
-      role: formValues.role.trim() || 'Personal Project | 2026',
-      image: formValues.image || 'gradient-sunset'
-    };
-
-    if (editingSlot === 'slot1') {
-      setSlot1(newProject);
-      localStorage.setItem('portfolio_project_slot1', JSON.stringify(newProject));
-    } else {
-      setSlot2(newProject);
-      localStorage.setItem('portfolio_project_slot2', JSON.stringify(newProject));
-    }
-
-    setModalOpen(false);
-  };
-
-  // Clear slot function
-  const handleClearSlot = (slotName, e) => {
-    e.stopPropagation();
-    if (window.confirm('Apakah Anda yakin ingin menghapus project ini dan mengosongkan slot kembali?')) {
-      if (slotName === 'slot1') {
-        setSlot1(null);
-        localStorage.removeItem('portfolio_project_slot1');
-      } else {
-        setSlot2(null);
-        localStorage.removeItem('portfolio_project_slot2');
-      }
-    }
-  };
-
-  const renderProjectCard = (project, isCustom = false, slotName = '') => {
+  const renderProjectCard = (project) => {
     const currentTab = activeTabs[project.name] || 'learned';
     const tabContent = currentTab === 'learned' ? (project.learned || []) : (project.challenges || []);
 
     return (
-      <div key={project.name} className="project-card-desktop custom-added-card">
-        {isCustom && (
-          <div className="project-custom-actions">
-            <button className="project-action-btn edit" onClick={() => openForm(slotName, project)} title="Edit Project">
-              ✏️ Edit
-            </button>
-            <button className="project-action-btn delete" onClick={(e) => handleClearSlot(slotName, e)} title="Reset Slot">
-              🗑️ Reset
-            </button>
-          </div>
-        )}
-
+      <div key={project.name} className="project-card-desktop">
         <div className="project-info">
           <h3 className="project-title">{project.name}</h3>
           
@@ -265,13 +170,9 @@ export default function ProjectsSection({ darkMode }) {
             </div>
             <div className="project-tab-content">
               <ul>
-                {tabContent.length > 0 ? (
-                  tabContent.map((item, i) => (
-                    <li key={i}>{item}</li>
-                  ))
-                ) : (
-                  <li>No entries added yet. Click edit to customize!</li>
-                )}
+                {tabContent.map((item, i) => (
+                  <li key={i}>{item}</li>
+                ))}
               </ul>
             </div>
           </div>
@@ -279,11 +180,7 @@ export default function ProjectsSection({ darkMode }) {
 
         <div className="project-visual">
           <div className="project-image-wrapper">
-            {project.image.startsWith('gradient-') ? (
-              <div className={`project-image-gradient ${project.image}`} />
-            ) : (
-              <img src={project.image} alt={project.name} className="project-image" />
-            )}
+            <img src={project.image} alt={project.name} className="project-image" />
           </div>
           
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginTop: '1rem' }}>
@@ -309,28 +206,6 @@ export default function ProjectsSection({ darkMode }) {
     );
   };
 
-  const renderEmptyCard = (slotName) => {
-    return (
-      <div 
-        key={slotName} 
-        className="project-card-empty" 
-        onClick={() => openForm(slotName, null)}
-      >
-        <div className="empty-card-dashed-border">
-          <div className="empty-card-content">
-            <div className="empty-card-plus-circle">
-              <span>+</span>
-            </div>
-            <h3 className="empty-card-title">Add New Project Slot</h3>
-            <p className="empty-card-subtitle">
-              Slot {slotName === 'slot1' ? '1' : '2'} Kosong. Klik di sini untuk mengisi details project baru Anda!
-            </p>
-          </div>
-        </div>
-      </div>
-    );
-  };
-
   return (
     <div className="projects-page-wrapper">
       <div className="projects-title-container">
@@ -342,170 +217,8 @@ export default function ProjectsSection({ darkMode }) {
 
       <div className="projects-list">
         {/* Render Default Projects */}
-        {defaultProjects.map(project => renderProjectCard(project, false))}
-
-        {/* Render Slot 1 (Custom Project or Empty Card) */}
-        {slot1 ? renderProjectCard(slot1, true, 'slot1') : renderEmptyCard('slot1')}
-
-        {/* Render Slot 2 (Custom Project or Empty Card) */}
-        {slot2 ? renderProjectCard(slot2, true, 'slot2') : renderEmptyCard('slot2')}
+        {defaultProjects.map(project => renderProjectCard(project))}
       </div>
-
-      {/* ── MODAL FORM FOR PROJECT DETAIL ── */}
-      {modalOpen && (
-        <div className="project-modal-overlay" onClick={() => setModalOpen(false)}>
-          <div className={`project-modal-card ${darkMode ? 'dark' : ''}`} onClick={(e) => e.stopPropagation()}>
-            <button className="project-modal-close" onClick={() => setModalOpen(false)}>×</button>
-            
-            <h2 className="project-modal-title">
-              {editingSlot === 'slot1' ? 'Customize Project Slot 1' : 'Customize Project Slot 2'}
-            </h2>
-            
-            <form onSubmit={handleSave} className="project-modal-form">
-              <div className="form-row">
-                <div className="form-group flex-1">
-                  <label>Project Name</label>
-                  <input 
-                    type="text" 
-                    placeholder="e.g. My Awesome Startup" 
-                    value={formValues.name}
-                    onChange={(e) => setFormValues({...formValues, name: e.target.value})}
-                    required
-                  />
-                </div>
-                
-                <div className="form-group flex-1">
-                  <label>Role / Date Label</label>
-                  <input 
-                    type="text" 
-                    placeholder="e.g. Personal Project | 2026" 
-                    value={formValues.role}
-                    onChange={(e) => setFormValues({...formValues, role: e.target.value})}
-                  />
-                </div>
-              </div>
-
-              <div className="form-row">
-                <div className="form-group flex-1">
-                  <label>Project Live Link (URL)</label>
-                  <input 
-                    type="text" 
-                    placeholder="e.g. https://myproject.com" 
-                    value={formValues.link}
-                    onChange={(e) => setFormValues({...formValues, link: e.target.value})}
-                  />
-                </div>
-                
-                <div className="form-group flex-1">
-                  <label>Visual Header Image / Style</label>
-                  <select 
-                    value={formValues.image} 
-                    onChange={(e) => setFormValues({...formValues, image: e.target.value})}
-                  >
-                    <option value="gradient-sunset">Sunset Glow Gradient (Premium)</option>
-                    <option value="gradient-ocean">Deep Ocean Blue Gradient (Premium)</option>
-                    <option value="gradient-forest">Emerald Teal Gradient (Premium)</option>
-                    <option value="gradient-fire">Solar Flare Orange Gradient (Premium)</option>
-                    <option value="resqnet.png">Use ResQNet Demo Mockup</option>
-                    <option value="elvara.png">Use Elvara Shop Demo Mockup</option>
-                    <option value="bikenjoy.png">Use Bikenjoy Demo Mockup</option>
-                  </select>
-                </div>
-              </div>
-
-              <div className="form-group">
-                <label>Description</label>
-                <textarea 
-                  rows="3" 
-                  placeholder="Enter brief description of the project and its goals..."
-                  value={formValues.description}
-                  onChange={(e) => setFormValues({...formValues, description: e.target.value})}
-                  required
-                />
-              </div>
-
-              <div className="form-group">
-                <label>Tech Stack (Popular)</label>
-                <div className="tech-checkbox-grid">
-                  {POPULAR_TECH.map(pt => (
-                    <label key={pt.name} className="tech-checkbox-label">
-                      <input 
-                        type="checkbox" 
-                        checked={formValues.tech.includes(pt.name)}
-                        onChange={(e) => {
-                          const isChecked = e.target.checked;
-                          setFormValues(prev => ({
-                            ...prev,
-                            tech: isChecked 
-                              ? [...prev.tech, pt.name]
-                              : prev.tech.filter(name => name !== pt.name)
-                          }));
-                        }}
-                      />
-                      <span>{pt.name}</span>
-                    </label>
-                  ))}
-                </div>
-              </div>
-
-              <div className="form-group">
-                <label>Custom Tech Stack (Optional - comma separated)</label>
-                <input 
-                  type="text" 
-                  placeholder="e.g. Redis, Express, WebGL" 
-                  value={formValues.customTech}
-                  onChange={(e) => setFormValues({...formValues, customTech: e.target.value})}
-                />
-              </div>
-
-              <div className="form-group">
-                <label>What I Learned (Max 3 items)</label>
-                {formValues.learned.map((item, idx) => (
-                  <input 
-                    key={idx}
-                    type="text" 
-                    placeholder={`Learning bullet ${idx + 1}`} 
-                    value={item}
-                    onChange={(e) => {
-                      const updated = [...formValues.learned];
-                      updated[idx] = e.target.value;
-                      setFormValues({...formValues, learned: updated});
-                    }}
-                    style={{ marginBottom: '0.4rem' }}
-                  />
-                ))}
-              </div>
-
-              <div className="form-group">
-                <label>Challenges Met (Max 2 items)</label>
-                {formValues.challenges.map((item, idx) => (
-                  <input 
-                    key={idx}
-                    type="text" 
-                    placeholder={`Challenge bullet ${idx + 1}`} 
-                    value={item}
-                    onChange={(e) => {
-                      const updated = [...formValues.challenges];
-                      updated[idx] = e.target.value;
-                      setFormValues({...formValues, challenges: updated});
-                    }}
-                    style={{ marginBottom: '0.4rem' }}
-                  />
-                ))}
-              </div>
-
-              <div className="form-actions">
-                <button type="button" className="btn-cancel" onClick={() => setModalOpen(false)}>
-                  Cancel
-                </button>
-                <button type="submit" className="btn-save">
-                  Save Project
-                </button>
-              </div>
-            </form>
-          </div>
-        </div>
-      )}
     </div>
   );
 }
