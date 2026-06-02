@@ -40,7 +40,7 @@ export default function ProjectsSection({ darkMode }) {
       ],
       link: "https://capstone-resqnet.vercel.app/",
       role: "Professional | March 2026 - Present",
-      image: "resqnet.png"
+      image: "/resqnet.png"
     },
     {
       name: "Elvara Shop",
@@ -60,7 +60,7 @@ export default function ProjectsSection({ darkMode }) {
       ],
       link: "https://ilhamelvara.github.io/onlinebooststrap/",
       role: "Personal Project | Mar 2026 - Present",
-      image: "elvara.png"
+      image: "/elvara.png"
     },
     {
       name: "Bikenjoy",
@@ -80,7 +80,7 @@ export default function ProjectsSection({ darkMode }) {
       ],
       link: "https://gojirated.github.io/bikenjoy/",
       role: "Team Project | 2026",
-      image: "bikenjoy.png"
+      image: "/bikenjoy.png"
     },
     {
       name: "ChildChoding",
@@ -100,7 +100,7 @@ export default function ProjectsSection({ darkMode }) {
       ],
       link: "https://gojirated.github.io/bikenjoy/",
       role: "Team Project | 2026",
-      image: "childchoding.png"
+      image: "/childchoding.png"
     },
     {
       name: "Website SPMB",
@@ -125,7 +125,7 @@ export default function ProjectsSection({ darkMode }) {
       ],
       link: "https://spmb.smkn2mojokerto.sch.id/",
       role: "Team Project | 2026",
-      image: "SPMB.png"
+      image: "/SPMB.png"
     }
   ];
 

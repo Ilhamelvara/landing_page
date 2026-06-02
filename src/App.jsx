@@ -25,8 +25,8 @@ export default function App() {
     <>
       {/* ── NAVBAR ── */}
       <nav className="navbar">
-        <div 
-          className="navbar-logo" 
+        <div
+          className="navbar-logo"
           onClick={() => setCurrentPage('home')}
           title="Go to Home"
         >
@@ -38,8 +38,8 @@ export default function App() {
             const isActive = currentPage === sectionId;
             return (
               <li key={link}>
-                <a 
-                  href={`#${sectionId}`} 
+                <a
+                  href={`#${sectionId}`}
                   className={isActive ? 'active' : ''}
                   onClick={(e) => {
                     e.preventDefault();
@@ -69,7 +69,7 @@ export default function App() {
             <section id="home" className="hero-section page-fade-in">
               {/* Background image */}
               <img
-                src="hero.png"
+                src="/hero.png"
                 alt="Developer workspace"
                 className="hero-img"
               />
@@ -81,10 +81,10 @@ export default function App() {
               <div className="hero-content">
                 <p className="hero-greeting">Hello, I'm</p>
                 <h1 className="hero-name">Mochammad Ilham Putra Irawan</h1>
-                <p className="hero-role">Web Developer</p>
-                
+                <p className="hero-role">Full Stack Developer</p>
+
                 <p className="hero-description">
-                  Saya adalah seorang web Developer yang berfokus pada pembuatan website interaktif yang modern, responsif, dan berestetika tinggi. Senang mengubah baris kode menjadi visual yang menakjubkan bagi pengguna.
+                  Saya adalah seorang Full Stack Developer yang berfokus pada pembuatan website interaktif yang modern, responsif, dan berestetika tinggi. Senang mengubah baris kode menjadi visual yang menakjubkan bagi pengguna.
                 </p>
 
                 {/* Quick Social Links */}
@@ -113,15 +113,15 @@ export default function App() {
                   <span className="hero-badge">Node.js</span>
                   <span className="hero-badge">Bootstrap</span>
                 </div>
-                
+
                 <div className="hero-actions">
-                  <button 
-                    className="hero-btn hero-btn--primary" 
+                  <button
+                    className="hero-btn hero-btn--primary"
                     onClick={() => setCurrentPage('about-me')}
                   >
                     About Me
                   </button>
-                  <button 
+                  <button
                     className="hero-btn hero-btn--ghost"
                     onClick={() => setCurrentPage('projects')}
                   >
@@ -161,7 +161,7 @@ export default function App() {
                 element?.scrollIntoView({ behavior: 'smooth' });
               }}>
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <polyline points="6 9 12 15 18 9"/>
+                  <polyline points="6 9 12 15 18 9" />
                 </svg>
                 <span>More</span>
               </button>

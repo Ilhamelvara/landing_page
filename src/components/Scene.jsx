@@ -11,7 +11,7 @@ import gsap from 'gsap'
 
 function Box({ args, position, rotation, color, roughness = 0.6, metalness = 0 }) {
   return (
-    <mesh position={position} rotation={rotation || [0,0,0]} castShadow receiveShadow>
+    <mesh position={position} rotation={rotation || [0, 0, 0]} castShadow receiveShadow>
       <boxGeometry args={args} />
       <meshStandardMaterial color={color} roughness={roughness} metalness={metalness} />
     </mesh>
@@ -20,7 +20,7 @@ function Box({ args, position, rotation, color, roughness = 0.6, metalness = 0 }
 
 function RoundedBox({ args, position, rotation, color, roughness = 0.5, metalness = 0 }) {
   return (
-    <mesh position={position} rotation={rotation || [0,0,0]} castShadow receiveShadow>
+    <mesh position={position} rotation={rotation || [0, 0, 0]} castShadow receiveShadow>
       <boxGeometry args={args} />
       <meshStandardMaterial color={color} roughness={roughness} metalness={metalness} />
     </mesh>
@@ -37,10 +37,10 @@ function Desk() {
       {/* Table top */}
       <Box args={[6.5, 0.12, 2.5]} position={[0, 0, 0]} color={wood} roughness={0.45} />
       {/* Table legs */}
-      <Box args={[0.08, 1.1, 0.08]} position={[-3.1,  -0.6, -1.1]} color={woodDark} />
-      <Box args={[0.08, 1.1, 0.08]} position={[ 3.1,  -0.6, -1.1]} color={woodDark} />
-      <Box args={[0.08, 1.1, 0.08]} position={[-3.1,  -0.6,  1.1]} color={woodDark} />
-      <Box args={[0.08, 1.1, 0.08]} position={[ 3.1,  -0.6,  1.1]} color={woodDark} />
+      <Box args={[0.08, 1.1, 0.08]} position={[-3.1, -0.6, -1.1]} color={woodDark} />
+      <Box args={[0.08, 1.1, 0.08]} position={[3.1, -0.6, -1.1]} color={woodDark} />
+      <Box args={[0.08, 1.1, 0.08]} position={[-3.1, -0.6, 1.1]} color={woodDark} />
+      <Box args={[0.08, 1.1, 0.08]} position={[3.1, -0.6, 1.1]} color={woodDark} />
       {/* Shelf underneath */}
       <Box args={[6.3, 0.05, 0.6]} position={[0, -0.9, -0.9]} color={wood} roughness={0.5} />
     </group>
@@ -53,7 +53,7 @@ function MonitorLeft() {
   return (
     <group position={[-1.7, 0.88, -0.7]} rotation={[0, 0.22, 0]}>
       {/* Frame */}
-      <Box args={[1.55, 0.92, 0.06]} position={[0, 0, 0]} color={clr.frame} roughness={0.3} metalness={0.5}/>
+      <Box args={[1.55, 0.92, 0.06]} position={[0, 0, 0]} color={clr.frame} roughness={0.3} metalness={0.5} />
       {/* Screen */}
       <mesh position={[0, 0, 0.035]}>
         <planeGeometry args={[1.4, 0.8]} />
@@ -93,9 +93,9 @@ function MonitorLeft() {
         </div>
       </Html>
       {/* Stand neck */}
-      <Box args={[0.07, 0.3, 0.07]} position={[0, -0.6, 0.05]} color={clr.stand} roughness={0.3} metalness={0.5}/>
+      <Box args={[0.07, 0.3, 0.07]} position={[0, -0.6, 0.05]} color={clr.stand} roughness={0.3} metalness={0.5} />
       {/* Stand base */}
-      <Box args={[0.45, 0.05, 0.2]} position={[0, -0.76, 0.08]} color={clr.base} roughness={0.3} metalness={0.5}/>
+      <Box args={[0.45, 0.05, 0.2]} position={[0, -0.76, 0.08]} color={clr.base} roughness={0.3} metalness={0.5} />
     </group>
   )
 }
@@ -106,7 +106,7 @@ function MonitorCenter({ activeSection, onSectionClick }) {
   return (
     <group position={[0.45, 0.88, -0.85]}>
       {/* Frame */}
-      <Box args={[1.7, 1.0, 0.06]} position={[0,0,0]} color={clr.frame} roughness={0.3} metalness={0.5}/>
+      <Box args={[1.7, 1.0, 0.06]} position={[0, 0, 0]} color={clr.frame} roughness={0.3} metalness={0.5} />
       {/* Screen content via Html */}
       <Html position={[0, 0, 0.04]} transform occlude distanceFactor={1.4} style={{ width: '310px', pointerEvents: 'all' }}>
         <div style={{
@@ -150,8 +150,8 @@ function MonitorCenter({ activeSection, onSectionClick }) {
         </div>
       </Html>
       {/* Stand */}
-      <Box args={[0.07, 0.3, 0.07]} position={[0, -0.65, 0.05]} color={clr.stand} roughness={0.3} metalness={0.5}/>
-      <Box args={[0.5, 0.05, 0.22]} position={[0, -0.82, 0.08]} color={clr.base} roughness={0.3} metalness={0.5}/>
+      <Box args={[0.07, 0.3, 0.07]} position={[0, -0.65, 0.05]} color={clr.stand} roughness={0.3} metalness={0.5} />
+      <Box args={[0.5, 0.05, 0.22]} position={[0, -0.82, 0.08]} color={clr.base} roughness={0.3} metalness={0.5} />
     </group>
   )
 }
@@ -164,12 +164,12 @@ function Keyboard() {
     { keys: 12, y: -0.06 },
     { keys: 11, y: -0.18 },
   ]
-  const colors = ['#f0f0f0','#f8d5e0','#d5e8f8','#f5f0d5','#d5f5e8']
+  const colors = ['#f0f0f0', '#f8d5e0', '#d5e8f8', '#f5f0d5', '#d5f5e8']
 
   return (
     <group position={[0.1, 0.075, 0.62]} rotation={[-0.06, 0, 0]}>
       {/* Base plate */}
-      <Box args={[2.0, 0.04, 0.6]} position={[0,0,0]} color="#e0ddd8" roughness={0.4} />
+      <Box args={[2.0, 0.04, 0.6]} position={[0, 0, 0]} color="#e0ddd8" roughness={0.4} />
       {/* Keys */}
       {rows.map((row, ri) =>
         Array.from({ length: row.keys }).map((_, ki) => {
@@ -195,11 +195,11 @@ function Mouse() {
   return (
     <group position={[1.65, 0.07, 0.5]}>
       {/* Pad */}
-      <Box args={[0.5, 0.01, 0.4]} position={[0, 0, 0]} color="#2a2a2a" roughness={0.8}/>
+      <Box args={[0.5, 0.01, 0.4]} position={[0, 0, 0]} color="#2a2a2a" roughness={0.8} />
       {/* Mouse body */}
       <mesh position={[0, 0.035, 0]} castShadow>
         <capsuleGeometry args={[0.04, 0.11, 4, 12]} />
-        <meshStandardMaterial color="#cccccc" roughness={0.3} metalness={0.2}/>
+        <meshStandardMaterial color="#cccccc" roughness={0.3} metalness={0.2} />
       </mesh>
     </group>
   )
@@ -210,15 +210,15 @@ function Lamp() {
   return (
     <group position={[2.6, 0.06, -0.5]}>
       {/* Base */}
-      <Box args={[0.24, 0.04, 0.16]} position={[0, 0, 0]} color="#1a1a1a" roughness={0.4} metalness={0.6}/>
+      <Box args={[0.24, 0.04, 0.16]} position={[0, 0, 0]} color="#1a1a1a" roughness={0.4} metalness={0.6} />
       {/* Arm 1 */}
-      <Box args={[0.04, 0.55, 0.04]} position={[0, 0.3, 0]} color="#1a1a1a" roughness={0.4} metalness={0.6}/>
+      <Box args={[0.04, 0.55, 0.04]} position={[0, 0.3, 0]} color="#1a1a1a" roughness={0.4} metalness={0.6} />
       {/* Arm 2 */}
-      <Box args={[0.04, 0.38, 0.04]} position={[-0.19, 0.73, 0]} rotation={[0, 0, -0.7]} color="#1a1a1a" roughness={0.4} metalness={0.6}/>
+      <Box args={[0.04, 0.38, 0.04]} position={[-0.19, 0.73, 0]} rotation={[0, 0, -0.7]} color="#1a1a1a" roughness={0.4} metalness={0.6} />
       {/* Shade */}
       <mesh position={[-0.36, 0.82, 0]} rotation={[0, 0, 0.6]} castShadow>
         <coneGeometry args={[0.14, 0.2, 12]} />
-        <meshStandardMaterial color="#1a1a1a" roughness={0.3} metalness={0.6} side={THREE.DoubleSide}/>
+        <meshStandardMaterial color="#1a1a1a" roughness={0.3} metalness={0.6} side={THREE.DoubleSide} />
       </mesh>
       {/* Light */}
       <pointLight position={[-0.36, 0.72, 0]} intensity={0.8} color="#ffcc77" distance={3} />
@@ -228,19 +228,19 @@ function Lamp() {
 
 // ── Pencil Cup ────────────────────────────────────────────────────────
 function PencilCup() {
-  const pencilColors = ['#e85d04','#f4a261','#2ec4b6','#e71d36','#8338ec','#06d6a0']
+  const pencilColors = ['#e85d04', '#f4a261', '#2ec4b6', '#e71d36', '#8338ec', '#06d6a0']
   return (
     <group position={[2.0, 0.07, -0.7]}>
       {/* Cup */}
       <mesh castShadow>
         <cylinderGeometry args={[0.1, 0.09, 0.2, 12]} />
-        <meshStandardMaterial color="#333" roughness={0.5} metalness={0.3}/>
+        <meshStandardMaterial color="#333" roughness={0.5} metalness={0.3} />
       </mesh>
       {/* Pencils */}
       {pencilColors.map((c, i) => (
         <mesh key={i} position={[0.02 * Math.cos(i * 1.1), 0.18, 0.02 * Math.sin(i * 1.1)]} rotation={[0.05 * (i % 3 - 1), i * 0.5, 0.05 * (i % 2 - 0.5)]}>
           <cylinderGeometry args={[0.012, 0.012, 0.22, 6]} />
-          <meshStandardMaterial color={c}/>
+          <meshStandardMaterial color={c} />
         </mesh>
       ))}
     </group>
@@ -253,17 +253,17 @@ function Mug() {
     <group position={[-2.6, 0.07, 0.55]}>
       <mesh castShadow>
         <cylinderGeometry args={[0.1, 0.09, 0.22, 16]} />
-        <meshStandardMaterial color="#f0f0ec" roughness={0.6}/>
+        <meshStandardMaterial color="#f0f0ec" roughness={0.6} />
       </mesh>
       {/* Handle */}
       <mesh position={[0.12, 0, 0]} castShadow>
         <torusGeometry args={[0.05, 0.018, 8, 16, Math.PI]} />
-        <meshStandardMaterial color="#f0f0ec" roughness={0.6}/>
+        <meshStandardMaterial color="#f0f0ec" roughness={0.6} />
       </mesh>
       {/* Coffee inside */}
       <mesh position={[0, 0.09, 0]}>
         <cylinderGeometry args={[0.085, 0.085, 0.02, 16]} />
-        <meshStandardMaterial color="#3d1a00" roughness={0.8}/>
+        <meshStandardMaterial color="#3d1a00" roughness={0.8} />
       </mesh>
       {/* Text on mug */}
       <Html position={[0, 0, 0.105]} transform occlude distanceFactor={3} style={{ pointerEvents: 'none', userSelect: 'none' }}>
@@ -281,15 +281,15 @@ function Plant() {
     <group position={[-2.9, 0.07, -0.8]}>
       <mesh castShadow>
         <cylinderGeometry args={[0.07, 0.06, 0.14, 12]} />
-        <meshStandardMaterial color="#be8c63" roughness={0.8}/>
+        <meshStandardMaterial color="#be8c63" roughness={0.8} />
       </mesh>
       <mesh position={[0, 0.12, 0]} castShadow>
         <sphereGeometry args={[0.1, 10, 10]} />
-        <meshStandardMaterial color="#2d6a4f" roughness={0.9}/>
+        <meshStandardMaterial color="#2d6a4f" roughness={0.9} />
       </mesh>
       <mesh position={[0.07, 0.18, 0.04]} rotation={[0.3, 0.5, 0.4]} castShadow>
         <sphereGeometry args={[0.06, 8, 8]} />
-        <meshStandardMaterial color="#40916c" roughness={0.9}/>
+        <meshStandardMaterial color="#40916c" roughness={0.9} />
       </mesh>
     </group>
   )
@@ -300,19 +300,19 @@ function Room() {
   return (
     <group>
       {/* Floor */}
-      <Box args={[12, 0.1, 8]} position={[0, -1.12, 0]} color="#d4c5b2" roughness={0.8}/>
+      <Box args={[12, 0.1, 8]} position={[0, -1.12, 0]} color="#d4c5b2" roughness={0.8} />
       {/* Back wall */}
-      <Box args={[12, 5, 0.12]} position={[0, 1.5, -2.5]} color="#e8e4dc" roughness={0.8}/>
+      <Box args={[12, 5, 0.12]} position={[0, 1.5, -2.5]} color="#e8e4dc" roughness={0.8} />
       {/* Window frame */}
-      <Box args={[2.5, 1.6, 0.15]} position={[0, 2.5, -2.42]} color="#8b7355" roughness={0.6}/>
+      <Box args={[2.5, 1.6, 0.15]} position={[0, 2.5, -2.42]} color="#8b7355" roughness={0.6} />
       {/* Window glass */}
       <mesh position={[0, 2.5, -2.35]}>
         <planeGeometry args={[2.3, 1.4]} />
-        <meshStandardMaterial color="#87ceeb" transparent opacity={0.4} roughness={0} metalness={0}/>
+        <meshStandardMaterial color="#87ceeb" transparent opacity={0.4} roughness={0} metalness={0} />
       </mesh>
       {/* Window blinds strips */}
-      {Array.from({length: 8}).map((_, i) => (
-        <Box key={i} args={[2.5, 0.04, 0.02]} position={[0, 3.1 - i * 0.14, -2.3]} color="#f5f0e8" roughness={0.5}/>
+      {Array.from({ length: 8 }).map((_, i) => (
+        <Box key={i} args={[2.5, 0.04, 0.02]} position={[0, 3.1 - i * 0.14, -2.3]} color="#f5f0e8" roughness={0.5} />
       ))}
       {/* Sunlight from window */}
       <directionalLight position={[0, 3, -1]} intensity={1.5} color="#fff5e4" target-position={[0, 0, 0]} />
